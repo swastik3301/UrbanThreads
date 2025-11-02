@@ -1,8 +1,11 @@
 import { Button } from "./ui/button";
+import { useNavigate } from "react-router-dom";
 import hoodiesImg from "@/assets/collection-hoodies.jpg";
 import jacketsImg from "@/assets/collection-jackets.jpg";
 
 const SeasonalOffers = () => {
+  const navigate = useNavigate();
+  
   const offers = [
     {
       title: "FALL DROP",
@@ -34,7 +37,12 @@ const SeasonalOffers = () => {
               <div className="absolute bottom-0 left-0 right-0 p-8 text-primary-foreground">
                 <p className="text-sm uppercase tracking-widest mb-2">{offer.subtitle}</p>
                 <h3 className="font-heading text-4xl md:text-5xl font-bold mb-6">{offer.title}</h3>
-                <Button variant="outline" size="lg" className="text-primary-foreground border-primary-foreground">
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="text-primary-foreground border-primary-foreground"
+                  onClick={() => navigate("/auth")}
+                >
                   Explore
                 </Button>
               </div>

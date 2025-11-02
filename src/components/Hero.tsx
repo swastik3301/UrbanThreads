@@ -1,7 +1,10 @@
 import { Button } from "./ui/button";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-main.jpg";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="relative h-[70vh] md:h-[85vh] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -20,7 +23,7 @@ const Hero = () => {
         <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
           Minimalist. Bold. Unapologetic.
         </p>
-        <Button variant="hero" size="lg">
+        <Button variant="hero" size="lg" onClick={() => navigate("/auth")}>
           Shop Now
         </Button>
       </div>

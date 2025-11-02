@@ -1,7 +1,9 @@
 import { Search, Heart, ShoppingCart, User } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "./ui/button";
 
 const Header = () => {
+  const navigate = useNavigate();
   const navItems = ["Home", "Collections", "Men", "Women", "Offers", "About Us", "Contact"];
 
   return (
@@ -37,7 +39,11 @@ const Header = () => {
             <button className="hover:text-muted-foreground transition-colors" aria-label="Cart">
               <ShoppingCart className="w-5 h-5" />
             </button>
-            <button className="hover:text-muted-foreground transition-colors" aria-label="Account">
+            <button 
+              className="hover:text-muted-foreground transition-colors" 
+              aria-label="Account"
+              onClick={() => navigate("/auth")}
+            >
               <User className="w-5 h-5" />
             </button>
           </div>
